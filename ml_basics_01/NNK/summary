@@ -1,0 +1,75 @@
+NNK is the basic of ML olgarthim and it is use the firsy question that we ask when we do calssfiction .It is be more unusfaul when the futeures be more big 
+about the code :
+train_test_split(X, y)
+“We split the dataset into training and testing sets to evaluate the model’s generalization performance on unseen data.”
+
+X_train, X_test, y_train, y_test = train_test_split(X, y)
+“X represents the feature matrix, while y represents the target labels.
+The model learns a mapping from X to y during supervised training.”
+
+I was have this question:
+i have quesion in this code ( X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2, random_state=100 )) way we do split
+if iam understang good we give valuse for how mutch we want let the text data size here 0.2 ,
+ok in this case is that mean the data set is has data not sprited i mean here the data of trining and data of test ?
+
+i get the answer it was good to learn that :
+“The dataset is initially unsplit. We use train_test_split to randomly divide it into training and testing sets, controlling the test size to evaluate generalization performance.”
+
+- Accuracy=(TP+TN)/Total   (نسبة التوقعات الصحيحة من إجمالي العينات) ((Percentage of correct predictions out of the total sample))  
+-Precision=TP/(TP+FP)   (عندما يقول النموذج "هذه الحالة إيجابية"، كم مرة يكون محقًا؟)  ((When the model says "this case is positive," how often is it correct?))
+-Recall=TP/(FN+TP)  (من كل الحالات الإيجابية الحقيقية، كم حالة اكتشفها النموذج؟)  ((Out of all the genuine positive cases, how many did the model detect?))
+
+Total = TP + TN + FP + FN
+
+1️⃣ TP — True Positive😊 
+
+✔ The model said: Sick
+✔ The reality is: Sick
+
+Example:
+
+The person has cancer
+
+The model predicted they have cancer
+
+➡ This prediction is correct
+
+2️⃣ TN — True Negative😊
+
+✔ The model said: Healthy
+✔ The reality is: Healthy
+
+Example:
+
+The person is healthy
+
+The model predicted they are healthy
+
+➡ This prediction is correct
+
+3️⃣ FP — False Positive (Very important medically) 😣
+
+❌ The model said: Sick
+❌ The reality is: Healthy
+
+Example:
+
+A healthy person
+
+The model said they have cancer
+
+➡ False (false alarm)
+
+4️⃣ FN — False Negative (Most serious)😰
+
+❌ The model said: Healthy
+❌ The reality is: Sick
+
+Example:
+
+A person has cancer
+
+The model said they are healthy
+
+➡ Critical error​​😰
+​
