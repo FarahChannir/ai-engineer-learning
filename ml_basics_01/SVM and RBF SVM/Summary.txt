@@ -1,0 +1,67 @@
+ answer for what is 5 in this command |:grid_search = GridSearchCV(svc, param_grid, cv=5)
+ means 5-fold cross-validation.
+
+What does cv=5 mean?
+
+It means the training data is split into 5 equal parts (folds).
+
+How it works:
+
+Split training data into 5 folds
+
+Train the model on 4 folds
+
+Validate on 1 fold
+
+Repeat this 5 times, each time using a different fold for validation
+
+Average the results
+
+Why do we do this?
+
+To get a more reliable estimate of model performance
+
+To reduce the risk of overfitting
+
+To select C and gamma based on stable results, not luck
+
+-----------
+Why 5 specifically?
+
+5 or 10 are industry standards
+
+Good balance between:
+
+Accuracy of evaluation
+
+Computation time
+
+Important note (AI Engineer mindset)
+
+cv=1 → meaningless
+
+cv=2 → unstable
+
+cv=5 → solid default
+
+cv=10 → more accurate, slower
+cv=5 means: “Try each parameter setting 5 times on different data splits and average the result.”
+
+---------------------------------------------------------------
+in this command grid_search.fit(X_train_scaled, y_train)
+i know that :
+What you should NEVER pass
+
+❌ X_test, y_test
+❌ X_train_scaled, y_test
+❌ X_test_scaled, y_train
+
+These break the learning logic.
+
+One-line summary
+
+You can use X_train, y_train
+
+You should use X_train_scaled, y_train
+
+You must not use test data in .fit()
