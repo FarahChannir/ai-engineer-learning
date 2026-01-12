@@ -18,7 +18,7 @@ def elbow_and_silhouette():
     K_range = range(2, 9)
 
     for k in K_range:
-        kmeans = KMeans(n_clusters=k, random_state=70)
+        kmeans = KMeans(n_clusters=k, random_state=42)
         labels = kmeans.fit_predict(X_scaled)
 
         inertia.append(kmeans.inertia_)#Elbow plot
